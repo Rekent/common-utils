@@ -1,5 +1,7 @@
 package com.rekent.tools.utils.crypt;
 
+import java.util.Arrays;
+
 /**
  * Utils to Unicode encode/decode
  * 
@@ -14,10 +16,14 @@ public class UnicodeUtils {
 	 * @param arg0
 	 * @return
 	 */
-	public static String encode(String arg0) {
+	public static String toUnicode(String arg0) {
 		StringBuilder unicode = new StringBuilder();
 		for (char element : arg0.toCharArray()) {
-			unicode.append("\\u").append(Integer.toHexString(element));
+			String hex = Integer.toHexString(element);
+			while (hex.length()<4) {
+				hex = "0" + hex;
+			}
+			unicode.append("\\u").append(hex);
 		}
 		return unicode.toString();
 	}
@@ -28,9 +34,10 @@ public class UnicodeUtils {
 	 * @param arg0
 	 * @return
 	 */
-	public static String decode(String arg0) {
+	public static String toPlainText(String arg0) {
 		StringBuilder normalBuilder = new StringBuilder();
 		String[] pureHexs = arg0.split("\\\\u");
+		pureHexs = Arrays.copyOfRange(pureHexs, 1, pureHexs.length);
 		for (String element : pureHexs) {
 			int charInteger = Integer.parseUnsignedInt(element, 16);
 			normalBuilder.append((char) charInteger);

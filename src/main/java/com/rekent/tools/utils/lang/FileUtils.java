@@ -13,7 +13,7 @@ import java.nio.file.Paths;
  * @author richard.zhang
  *
  */
-public class QuickFileUtils {
+public class FileUtils {
 
 	/**
 	 * convert local file to byte array
@@ -23,7 +23,7 @@ public class QuickFileUtils {
 	 * @return
 	 * @throws IOException
 	 */
-	public static byte[] readFileAsByteArray(String path) throws IOException {
+	public static byte[] readLocalFiles(String path) throws IOException {
 		Path filePath = Paths.get(path);
 		return Files.readAllBytes(filePath);
 	}
@@ -37,8 +37,24 @@ public class QuickFileUtils {
 	 * @param option
 	 * @throws IOException
 	 */
-	public static void writeBytesIntoFile(byte[] fileBytes, String path, OpenOption option) throws IOException {
+	public static void writeLocalFiles(byte[] fileBytes, String path, OpenOption option) throws IOException {
 		Path filePath = Paths.get(path);
 		Files.write(filePath, fileBytes, option);
+	}
+	
+	/**
+	 * get file name , before the last '.'
+	 * @param fileName
+	 * @return
+	 */
+	public static String getFileName(String fileName) {
+		if (StringUtils.isBlank(fileName)) {
+			throw new IllegalArgumentException("illegal file name");
+		}
+		String[] names = fileName.split("\\.");
+		if (names.length < 2) {
+			return fileName;
+		}
+		return fileName.substring(0,fileName.lastIndexOf("."));
 	}
 }

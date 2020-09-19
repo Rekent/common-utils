@@ -11,11 +11,12 @@ import com.rekent.tools.utils.crypt.HexUtils;
  *
  */
 public class MD5Utils {
+	private static final String ALGORITHM = "MD5";
 	private static MessageDigest md5;
 
 	static {
 		try {
-			md5 = MessageDigest.getInstance("MD5");
+			md5 = MessageDigest.getInstance(ALGORITHM);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

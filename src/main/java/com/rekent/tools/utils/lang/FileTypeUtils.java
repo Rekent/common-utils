@@ -115,7 +115,7 @@ public class FileTypeUtils {
 		return false;
 	}
 
-	private static List<String> parseFilePartNameList(InputStream input) throws IOException, JDOMException {
+	protected static List<String> parseFilePartNameList(InputStream input) throws IOException, JDOMException {
 		List<String> partNames = new ArrayList<>();
 		ZipInputStream zipStream = new ZipInputStream(input);
 		BufferedInputStream bufferStream = new BufferedInputStream(zipStream);

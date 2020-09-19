@@ -15,11 +15,12 @@ import com.rekent.tools.utils.crypt.HexUtils;
  * @author richard.zhang
  */
 public class HmacMD5Utils {
+	private static final String ALGORITHM = "HmacMD5";
 	private static Mac mac;
 
 	static {
 		try {
-			mac = Mac.getInstance("HmacMD5");
+			mac = Mac.getInstance(ALGORITHM);
 		} catch (NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
 		}
@@ -34,7 +35,7 @@ public class HmacMD5Utils {
 	 * @throws InvalidKeyException
 	 */
 	public static String toHmcMD5(String arg0, byte[] key) throws InvalidKeyException {
-		SecretKey secretKey = new SecretKeySpec(key, "HmacMD5");
+		SecretKey secretKey = new SecretKeySpec(key, ALGORITHM);
 		mac.init(secretKey);
 		return HexUtils.toHexString(mac.doFinal(arg0.getBytes()));
 	}
@@ -48,7 +49,7 @@ public class HmacMD5Utils {
 	 * @throws InvalidKeyException
 	 */
 	public static String toHmacMD5(byte[] arg0, byte[] key) throws InvalidKeyException {
-		SecretKey secretKey = new SecretKeySpec(key, "HmacMD5");
+		SecretKey secretKey = new SecretKeySpec(key, ALGORITHM);
 		mac.init(secretKey);
 		return HexUtils.toHexString(mac.doFinal(arg0));
 	}

@@ -37,6 +37,9 @@ public class IOUtils {
 	 * @throws IOException
 	 */
 	public static byte[] readStreamAsBytes(InputStream stream) throws IOException {
+		if (stream == null) {
+			return null;
+		}
 		try (ByteArrayOutputStream output = new ByteArrayOutputStream()) {
 			byte[] buffer = new byte[BUFFER_SIZE];
 			int len = -1;
@@ -60,6 +63,9 @@ public class IOUtils {
 	 * @throws IOException
 	 */
 	public static String readStreamAsString(InputStream stream, String charset) throws IOException {
+		if (stream == null) {
+			return null;
+		}
 		String response = "";
 		byte[] bytes = new byte[stream.available()];
 		if (bytes.length > 0) {

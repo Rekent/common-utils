@@ -44,7 +44,7 @@ public class HexUtils {
 	 * @param arg0
 	 * @return
 	 */
-	public static byte[] decode(String arg0) {
+	public static byte[] toPlainText(String arg0) {
 		int m = 0, n = 0;
 		int byteLen = arg0.length() / 2;
 		byte[] ret = new byte[byteLen];
