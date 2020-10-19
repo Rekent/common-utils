@@ -52,7 +52,7 @@ public class JsonUtils {
 	 * @return
 	 * @throws JsonProcessingException
 	 */
-	public String serializeObject(Object object) throws JsonProcessingException {
+	public static String serializeObject(Object object) throws IOException {
 		return objectMapper.writeValueAsString(object);
 	}
 
