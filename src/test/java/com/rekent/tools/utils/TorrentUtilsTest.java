@@ -11,7 +11,7 @@ public class TorrentUtilsTest extends TestCase{
 
 	@Test
 	public void testResolve() throws Exception {
-		String path = "C:\\Users\\richa\\Downloads\\Mulan (2020) [1080p] [WEBRip] [5.1] [YTS.MX].torrent";
+		String path = "C:\\Users\\richa\\Downloads\\Friends.S07.720p.BluRay.x264-PSYCHD[btbtt.co].torrent";
 		TorrentFile torrentFile = TorrentFileUtils.resolve(path);
 		System.out.println(torrentFile.print());
 		System.out.println("==========");

@@ -68,7 +68,7 @@ public final class TorrentFileResovler {
 				Long num = readInt(struct);
 				map.put(new String(key), num);
 				key = null;
-			} else if (symbol > '0' && symbol < '9') {
+			} else if (symbol >= '0' && symbol <= '9') {
 				String data = readString(struct);
 				if (key == null) {
 					key = data;
@@ -147,7 +147,7 @@ public final class TorrentFileResovler {
 			} else if (symbol == 'i') {
 				Long num = readInt(struct);
 				list.add(num);
-			} else if (symbol > '0' && symbol < '9') {
+			} else if (symbol >= '0' && symbol <= '9') {
 				String data = readString(struct);
 				list.add(data);
 			} else {

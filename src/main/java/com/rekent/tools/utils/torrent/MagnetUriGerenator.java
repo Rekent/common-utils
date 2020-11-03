@@ -36,6 +36,9 @@ public final class MagnetUriGerenator {
 		builder.append(TR).append(URLEncoder.encode(tarcker, CHARSET));
 		if (CollectionUtils.isNotEmpty(trackers)) {
 			for (String trackerElement : trackers) {
+				if (trackerElement.equals(tarcker)) {
+					continue;
+				}
 				builder.append(TR).append(URLEncoder.encode(trackerElement, CHARSET));
 			}
 		}
