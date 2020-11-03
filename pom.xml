@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.rekent.tools</groupId>
-	<artifactId>commonutils</artifactId>
-	<version>0.0.2</version>
+	<artifactId>common-utils</artifactId>
+	<version>0.0.3</version>
 	<packaging>jar</packaging>
 
 	<name>commonutils</name>

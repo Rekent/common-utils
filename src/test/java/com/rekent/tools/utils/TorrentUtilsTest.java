@@ -14,7 +14,6 @@ public class TorrentUtilsTest extends TestCase{
 		String path = "C:\\Users\\richa\\Downloads\\Friends.S07.720p.BluRay.x264-PSYCHD[btbtt.co].torrent";
 		TorrentFile torrentFile = TorrentFileUtils.resolve(path);
 		System.out.println(torrentFile.print());
-		System.out.println("==========");
 		System.out.println(torrentFile.getHash());
 		System.out.println(torrentFile.getMagnetUri());
 		System.out.println(torrentFile.getOriginalPieces());

@@ -7,9 +7,6 @@ import com.rekent.tools.utils.lang.StringUtils;
 /**
  * 
  * 种子文件解析
- * 
- * @author chenhao.zhang
- *
  */
 public final class TorrentFileUtils {
 
