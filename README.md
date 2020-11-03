@@ -40,7 +40,7 @@ mvn install:install-file -Dfile=common-utils-0.0.3.jar
 
 ## 更新历史
 
-### v 0.0.1 
+### v0.0.1 
 
 基本的工具方法，具体见下：
 - 基本工具
